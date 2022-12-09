@@ -21,7 +21,7 @@ So if you need php version lower than 8.1, run in command line:
     mkdir /decker/services/php/${YOUR_VERSION}
     touch /decker/services/php/${YOUR_VERSION}/Dockerfile
 ```
-And then edit your Dockerfile as you need. **Do not forget to change PHP_VERSION in .env file.**
+And then edit your Dockerfile as you need. **Do not forget to change PHP_VERSION in the .env file.**
 
 
 ### Current service versions
@@ -33,3 +33,12 @@ And then edit your Dockerfile as you need. **Do not forget to change PHP_VERSION
 **Nginx** latest
 
 ## Usage
+Run ``docker-compose up -d --build``
+
+## For Linux users 
+Before running ``docker-compose build``, make sure that your current user UID matches USER_UID in .env file.
+Run:
+```shell
+echo $UID #returns current uid
+```
+If your uid is different, replace USER_UID value with yours in the .env file. 
