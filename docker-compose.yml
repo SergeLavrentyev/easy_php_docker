@@ -11,7 +11,7 @@ services:
     container_name: ${DOCKER_PROJECT_NAME}_php
     image: ${DOCKER_PROJECT_NAME}_php
     restart: always
-    working_dir: ${DOCKER_PROJECT_PATCH}
+    working_dir: ${DOCKER_PROJECT_PATCH}/src
     extra_hosts:
       - host.docker.internal:host-gateway
     volumes:
