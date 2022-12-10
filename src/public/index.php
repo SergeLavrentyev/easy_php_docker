@@ -4,4 +4,6 @@ declare(strict_types=1);
 
 require __DIR__ . '/../vendor/autoload.php';
 
-echo 'hello';
+use App\Example;
+
+echo (new Example())();
