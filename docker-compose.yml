@@ -20,8 +20,11 @@ services:
       - ${PWD}/docker/services/php/${PHP_VERSION}/xdebug.ini:${PHP_INI_DIR}/conf.d/xdebug.ini
 
   nginx:
-    image: nginx:latest
+    build:
+      context: ./
+      dockerfile: docker/services/nginx/${NGINX_VERSION}/Dockerfile
     container_name: ${DOCKER_PROJECT_NAME}_nginx
+    image: ${DOCKER_PROJECT_NAME}_nginx
     restart: always
     ports:
       - 80:80
